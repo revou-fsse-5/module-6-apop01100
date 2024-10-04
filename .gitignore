@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+*.pyc
+*.pyo
+.env
+*.env
+
+# Flask migrations
+migrations/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.cache/
+nosetests.xml
+coverage.xml
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Logs and databases
+*.log
+*.pot
+*.mo
+*.pid
+*.swp
+
+# VSCode
+.vscode/
+
+# IDEs & Editors
+.idea/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+
+# Docker specific
+docker-compose.yml
+Dockerfile
+
+# Node modules (if using frontend with Flask)
+node_modules/
+npm-debug.log
+
+# Swagger UI autogeneration
+*.swagger-codegen/
+
+# Mac specific
+*.DS_Store
