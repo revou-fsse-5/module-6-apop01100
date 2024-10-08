@@ -1,0 +1,81 @@
+Update employee data by id
+---
+tags:
+  - Employee
+parameters:
+  - name: id
+    in: path
+    type: integer
+    required: true
+    description: employee id
+    schema:
+      type: integer
+      example: 2
+  - name: employee
+    in: body
+    required: true
+    description: update employee data
+    schema:
+      type: object
+      properties:
+        role:
+          type: string
+          description: update employee role
+          example: administration
+        schedule:
+          type: object
+          properties:
+            start:
+              type: string
+              description: update employee start working hours
+              example: "09:00"
+            end:
+              type: string
+              description: update employee end working hours
+              example: "17:00"
+responses:
+  200:
+    description: Success PUT employee data by id
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: success messsage
+          example: success PUT employee data id=2
+        employee:
+          type: object
+          properties:
+            id:
+              type: integer
+              descripton: update employee data by id
+              example: 2
+            name:
+              type: string
+              descripton: update employee name data by id
+              example: Alice Johnson
+            role: 
+              type: string
+              descripton: update employee role role
+              example: administration
+            schedule:
+              type: object
+              properties:
+                start:
+                  type: string
+                  descripton: update employee data start working hours by id
+                  example: "08:00:00"
+                end:
+                  type: string
+                  descripton: update employee data end working hours by id
+                  example: "17:00:00"
+  404:
+    description: Not found employee id
+    schema:
+      type: object
+      properties: 
+        message:
+          type: string
+          description: not found message
+          example: not found employee id=2
+      

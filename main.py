@@ -1,9 +1,6 @@
-from flask import jsonify
-from core.routes.animal import animal_router
-from core.routes.employee import employee_router
-from core.config import setting
+from core import create_app
 
-app = setting.app
+app = create_app()
 
-app.register_blueprint(animal_router)
-app.register_blueprint(employee_router)
+if __name__ == '__main__':
+    app.run(debug=True)

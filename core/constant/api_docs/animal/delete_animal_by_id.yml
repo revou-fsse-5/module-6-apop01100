@@ -1,0 +1,32 @@
+Delete animal data by id
+---
+tags:
+  - Animal
+parameters:
+  - name: id
+    in: path
+    type: integer
+    required: true
+    description: animal id
+    schema:
+      type: integer
+      example: 1
+responses:
+  200:
+    description: Success DELETE animal data by id
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: seuccess message
+          example: success DELETE animal data id=1
+  404:
+    description: Not found animal id
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: not found message
+          example: not found animal id=1

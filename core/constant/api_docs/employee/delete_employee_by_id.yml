@@ -1,0 +1,32 @@
+Delete employee data by id
+---
+tags:
+  - Employee
+parameters:
+  - name: id
+    in: path
+    type: integer
+    required: true
+    description: employee id
+    schema:
+      type: integer
+      example: 2
+responses:
+  200:
+    description: Success DELETE employee data by id
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: seuccess message
+          example: success DELETE employee data id=2
+  404:
+    description: Not found employee id
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: not found message
+          example: not found employee id=2

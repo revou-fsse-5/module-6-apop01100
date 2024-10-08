@@ -1,0 +1,42 @@
+Get employees data
+---
+tags:
+  - Employee
+responses:
+  200:
+    description: Success GET all employees data
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: success message
+          example: success GET employees data
+        eployees:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                description: employee id
+                example: 2
+              name:
+                type: string
+                description: employee name
+                example: Alicia Johnson
+              role:
+                type: string
+                description: employee role
+                example: zookeeper
+              schedule:
+                type: object
+                properties:
+                  start:
+                    type: string
+                    description: employee start working hours
+                    example: "08:00:00"
+                  end:
+                    type: string
+                    description: employee end working hours
+                    example: "17:00:00"

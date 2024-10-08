@@ -1,0 +1,70 @@
+Create new employee data
+---
+tags:
+  - Employee
+parameters:
+  - name: employee
+    in: body
+    required: true
+    description: new employee data
+    schema:
+      type: object
+      properties:
+        name: 
+          type: string
+          description: new employee name
+          example: Alice Johnson
+        role:
+          type: string
+          description: new employee role
+          example: zookeeper
+        schedule:
+          type: object
+          properties:
+            start:
+              type: string
+              description: new employee start working hours
+              example: "08:00"
+            end:
+              type: string
+              description: new employee end working hours
+              example: "17:00"
+responses:
+  201:
+    description: Success POST new employee data
+    schema:
+      type: object
+    properties:
+      message:
+        type: string
+        description: success messsage
+        example: success POST employee data id=2
+      employee:
+        type: object
+        properties:
+          id:
+            type: integer
+            descripton: new employee id
+            example: 2
+          name:
+            type: string
+            descripton: new employee name
+            example: Alice Johnson
+          role: 
+            type: string
+            descripton: new employee role
+            example: zookeeper
+          schedule:
+            type: object
+            properties:
+              start:
+                type: string
+                descripton: new employee start working hours
+                example: "08:00:00"
+              end:
+                type: string
+                descripton: new employee end working hours
+                example: "17:00:00"
+
+            
+      

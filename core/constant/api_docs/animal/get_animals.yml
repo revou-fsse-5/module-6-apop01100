@@ -1,0 +1,54 @@
+Get animals data
+---
+tags:
+  - Animal
+responses:
+  200:
+    description: Success GET animals data
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: success message
+          example: success GET animals data
+        animals:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                description: animal id
+                example: 1
+              name:
+                type: string
+                description: animal name
+                example: Simba
+              species:
+                type: string
+                description: animal species
+                example: lion
+              birth:
+                type: date
+                description: animal date of birth
+                example: "Mon, 29 May 2017 00:00:00 GMT"
+              age:
+                type: string
+                description: animal age
+                example: 7 years
+              habitat:
+                type: string
+                description: animal habitat
+                example: savanna
+              data_records:
+                type: object
+                properties:
+                  created:
+                    type: date
+                    description: animal data created
+                    example: "Fri, 04 Oct 2024 16:09:50 GMT"
+                  updated:
+                    type: date
+                    description: animal data updated
+                    example: "Fri, 04 Oct 2024 16:52:06 GMT"
