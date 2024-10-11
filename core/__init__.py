@@ -9,16 +9,25 @@ load_dotenv()
 db = SQLAlchemy()
 migrate = Migrate()
 
-def create_app():
+def create_app(test=False):
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("POSTGRES_CONNECTION_STRING")
+    
+    if test:
+        app.config['TESTING'] = True
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("TESTING_POSTGRES_CONNECTION_URI")
+    else:    
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("POSTGRES_CONNECTION_URI")
+        
     db.init_app(app)
     migrate.init_app(app, db)
     swagger = Swagger(app)
     
-    @app.route("/")
-    def index():
-        return redirect("/apidocs/#/")
+    if not test:
+        @app.route("/")
+        def index():
+            return redirect("/apidocs/#/")
+    
+        
     
     with app.app_context():
         from core.routes.api import employee as employee_blueprint

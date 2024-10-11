@@ -17,8 +17,8 @@ class EmployeeDAL:
         new_employee = Employee(
             name = data.get("name"),
             role = data.get("role").lower(),
-            start_work = data.get("schedule").get("start"),
-            end_work = data.get("schedule").get("end")
+            start_work = data.get("work_hour").get("start"),
+            end_work = data.get("work_hour").get("end")
         )
         db.session.add(new_employee)
         db.session.commit()
@@ -31,8 +31,8 @@ class EmployeeDAL:
         if employee is not None:
             employee.name = data.get("name", employee.name)
             employee.role = data.get("role", employee.role)
-            employee.start_work = data.get("start_work", employee.start_work)
-            employee.end_work = data.get("end_work", employee.end_work)
+            employee.start_work = data.get("work_hour").get("start", employee.start_work)
+            employee.end_work = data.get("work_hour").get("end", employee.end_work)
             db.session.commit()
             return employee.to_dict()
         return None
@@ -44,6 +44,6 @@ class EmployeeDAL:
             db.session.delete(employee)
             db.session.commit()
             return Messages.success_message("employee", "DELETE", id)
-        return Messages.not_found_messages("employee", id)
+        return None
             
         

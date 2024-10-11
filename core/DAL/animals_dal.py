@@ -1,6 +1,7 @@
 from core.models.animal import Animal
 from core import db
 from core.constant.messages import Messages
+from datetime import datetime
 
 class AnimalDAL:
     
@@ -17,6 +18,7 @@ class AnimalDAL:
         new_animal = Animal(
             name = data.get("name"),
             species = data.get("species").lower(),
+            gender = data.get("gender").lower() if data.get("gender") else None,
             birth = data.get("birth"),
             age = data.get("age"),
             habitat = data.get("habitat").lower()
@@ -32,6 +34,7 @@ class AnimalDAL:
         if animal is not None:
             animal.name = data.get("name", animal.name)
             animal.species = data.get("species", animal.species)
+            animal.gender = data.get("gender", animal.gender)
             animal.birth = data.get("birth", animal.birth)
             animal.age = data.get("age", animal.age)
             animal.habitat = data.get("habitat", animal.habitat)
@@ -46,6 +49,6 @@ class AnimalDAL:
             db.session.delete(animal)
             db.session.commit()
             return Messages.success_message("animal", "DELETE", id)
-        return Messages.not_found_messages("animal", id)
+        return None
             
         

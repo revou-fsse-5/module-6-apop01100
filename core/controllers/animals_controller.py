@@ -65,9 +65,6 @@ class AnimalsControllers:
         """
         delete_message = AnimalDAL.delete_animal(id)
         if delete_message is not None:
-            return jsonify({
-                "message": delete_message
-            }), 200
-        return jsonify({
-            "message": delete_message
-        }), 404
+            return jsonify({"message": delete_message}), 200
+        
+        return jsonify({"message":  Messages.not_found_messages("animal", id)}), 404

@@ -14,7 +14,11 @@ flask-sqlalchemy = "^3.1.1"
 flask-migrate = "^4.0.7"
 sqlalchemy-serializer = "^1.4.22"
 flasgger = "^0.9.7.1"
+pytest-cov = "^5.0.0"
 
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.3"
 
 [build-system]
 requires = ["poetry-core"]

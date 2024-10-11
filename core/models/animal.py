@@ -20,18 +20,20 @@ class Animal(db.Model):
         else:
             year = " years"
             
-        employee_dict = {
+        date_format = "%d/%m/%Y"
+            
+        animal_dict = {
             "id": self.id,
             "name": self.name,
             "species": self.species,
-            "birth": self.birth,
-            "age": self.age + year,
+            "birth": self.birth.strftime(date_format),
+            "age": str(self.age) + year,
             "habitat": self.habitat,
             "data_records": {
-                "created": self.created_date,
-                "updated": self.update_date
+                "created": self.created_date.strftime(date_format),
+                "updated": self.update_date.strftime(date_format) if self.update_date else None
             }
             
         }
         
-        return employee_dict
+        return animal_dict

@@ -36,7 +36,7 @@ class EmployeeControllers:
         file: ../constant/api_docs/employee/add_employee.yml
         """
         data = request.json
-        new_employee = EmployeeDAL.create_employee(data)
+        new_employee = EmployeeDAL.add_employee(data)
         return jsonify({
             "message": Messages.success_message("employee", "POST", new_employee.get("id")),
             "employee": new_employee
@@ -69,5 +69,5 @@ class EmployeeControllers:
                 "message": delete_message
             }), 200
         return jsonify({
-            "message": delete_message
+            "message": Messages.not_found_messages("employee", id)
         }), 404
