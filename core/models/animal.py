@@ -26,6 +26,7 @@ class Animal(db.Model):
             "id": self.id,
             "name": self.name,
             "species": self.species,
+            "gender": self.gender,
             "birth": self.birth.strftime(date_format),
             "age": str(self.age) + year,
             "habitat": self.habitat,

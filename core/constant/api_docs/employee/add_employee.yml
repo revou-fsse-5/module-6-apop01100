@@ -18,7 +18,7 @@ parameters:
           type: string
           description: new employee role
           example: zookeeper
-        schedule:
+        work_hour:
           type: object
           properties:
             start:

@@ -32,14 +32,14 @@ parameters:
           example: "6"
 responses:
   200:
-    description: Success POST new animal data
+    description: Success PUT new animal data
     schema:
       type: object
       properties:
         message:
           type: string
           description: success message
-          example: success POST animal data id=1
+          example: success PUT animal data id=1
         animal:
           type: object
           properties:

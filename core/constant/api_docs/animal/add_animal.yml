@@ -25,13 +25,13 @@ parameters:
         age:
           type: string
           description: animal age
-          example: 7 years
+          example: "7"
         habitat:
           type: string
           description: animal habitat
           example: savanna
 responses:
-  200:
+  201:
     description: Success POST new animal data
     schema:
       type: object
