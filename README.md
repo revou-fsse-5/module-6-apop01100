@@ -5,3 +5,10 @@
 
 ### ZOO'S EMPLOYEES API
 [Zoo's Employees API](https://tory-nicholle-apop01100-a5a11ec0.koyeb.app/employees)
+
+### ZOO API UNIT TESTING RESULTS
+#### Unit Testing Endpoint ```/animals``` and ```/employees``` API:
+![Unit Testing /animals and /employees API Results](public/docs/res_animal_api.png)
+
+#### Coverage results:
+![Coverage Unit Testing Results for Endpoint /animals and /employees](public/docs/coverage.png)
